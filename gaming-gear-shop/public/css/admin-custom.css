@@ -1,0 +1,52 @@
+.badge {
+    display: inline-block;
+    padding: .7em 1em; /* Có thể chỉnh lại padding */
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff; /* Màu chữ mặc định là trắng */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .85rem; /* Bo góc */
+    text-transform: uppercase; /* Chữ in hoa */
+
+}
+
+/* --- Định nghĩa màu cho từng trạng thái --- */
+
+/* Trạng thái: Mới (Pending) */
+.badge.badge-status-pending {
+    background-color: #6c757d; /* Màu xám đậm (Secondary) */
+    color: #ffffff;
+}
+
+/* Trạng thái: Đang xử lý (Processing) */
+.badge.badge-status-processing {
+    background-color: #ffc107; /* Màu vàng (Warning) */
+    color: #212529; /* Chữ màu tối trên nền vàng cho dễ đọc */
+}
+
+/* Trạng thái: Đang giao (Shipped) */
+.badge.badge-status-shipped {
+    background-color: #17a2b8; /* Màu xanh dương nhạt (Info) */
+    color: #ffffff;
+}
+
+/* Trạng thái: Đã giao (Delivered) */
+.badge.badge-status-delivered {
+    background-color: #28a745; /* Màu xanh lá (Success) */
+    color: #ffffff;
+}
+
+/* Trạng thái: Đã hủy (Cancelled) */
+.badge.badge-status-cancelled {
+    background-color: #dc3545; /* Màu đỏ (Danger) */
+    color: #ffffff;
+}
+
+/* Trạng thái Mặc định/Không xác định */
+.badge.badge-status-default {
+    background-color: #adb5bd; /* Màu xám nhạt hơn */
+    color: #ffffff;
+}
