@@ -15,7 +15,7 @@ class OrderPlaced extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public Order $order; // Dữ liệu đơn hàng
+    public Order $order; 
 
     public function __construct(Order $order)
     
@@ -29,7 +29,6 @@ class OrderPlaced extends Mailable
 
     public function envelope(): Envelope
     {
-        // Đọc From từ config (lấy từ .env)
         $fromAddress = config('mail.from.address', 'error@example.com');
         $fromName = config('mail.from.name', config('app.name'));
 
