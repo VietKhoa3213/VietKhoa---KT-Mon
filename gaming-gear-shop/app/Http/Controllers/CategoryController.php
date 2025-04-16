@@ -10,13 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
-    /**
-     * Hiển thị trang danh sách sản phẩm của một category cụ thể.
-     * Laravel tự động tìm Category dựa vào tham số {category} trên URL (Route Model Binding).
-     *
-     * @param Category $category Đối tượng Category đã được tìm thấy.
-     * @return View
-     */
+   
     public function show(Category $category): View
     {
     
