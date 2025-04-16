@@ -20,9 +20,7 @@ class ProductController extends Controller
 {
     private $uploadPath = 'preview/image/product'; 
 
-    /**
-     * Hiển thị danh sách sản phẩm.
-     */
+ 
     public function index(): View
     {
        
@@ -30,9 +28,7 @@ class ProductController extends Controller
         return view('admin.products.index', compact('products'));
     }
 
-    /**
-     * Hiển thị form tạo sản phẩm mới.
-     */
+   
     public function create(): View
     {
         $categories = Category::orderBy('name')->get();
@@ -40,9 +36,7 @@ class ProductController extends Controller
         return view('admin.products.create', compact('categories', 'brands'));
     }
 
-    /**
-     * Lưu sản phẩm mới vào database.
-     */
+  
     public function store(StoreProductRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -95,9 +89,7 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Thêm sản phẩm thành công!');
     }
 
-    /**
-     * Hiển thị form chỉnh sửa sản phẩm.
-     */
+    
     public function edit(Product $product): View
     {
         $categories = Category::orderBy('name')->get();
@@ -105,9 +97,7 @@ class ProductController extends Controller
         return view('admin.products.edit', compact('product', 'categories', 'brands'));
     }
 
-    /**
-     * Cập nhật sản phẩm trong database.
-     */
+  
     public function update(UpdateProductRequest $request, Product $product): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -167,9 +157,7 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Cập nhật sản phẩm thành công!');
     }
 
-    /**
-     * Xóa sản phẩm.
-     */
+  
     public function destroy(Product $product): RedirectResponse
     {
         if ($product->image && File::exists(public_path($product->image))) {
