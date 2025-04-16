@@ -49,16 +49,6 @@
                 @endif
             </div>
 
-            {{-- <div class="widget price-widget">
-                <h3 class="widget-title">Lọc theo giá</h3>
-                <form action="{{ route('products.index') }}" method="GET">
-                    // Price slider or input fields here
-                    <button type="submit">Lọc</button>
-                </form>
-            </div> --}}
-
-        
-
         </aside>
 
         <section class="shop-main-content">
@@ -66,16 +56,7 @@
                 <div class="result-count">
                     Hiển thị {{ $products->firstItem() }}-{{ $products->lastItem() }} của {{ $products->total() }} kết quả
                 </div>
-                {{-- <div class="sorting">
-                    <form action="{{ route('products.index') }}" method="GET">
-                        // Add hidden inputs for existing filters (category, price...)
-                        <select name="sort" onchange="this.form.submit()">
-                            <option value="latest" {{ request('sort') == 'latest' ? 'selected' : '' }}>Mới nhất</option>
-                            <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>Giá tăng dần</option>
-                            <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>Giá giảm dần</option>
-                        </select>
-                    </form>
-                </div> --}}
+                
             </div>
             <div class="product-grid-shop" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; "> 
                 @forelse ($products as $product)
