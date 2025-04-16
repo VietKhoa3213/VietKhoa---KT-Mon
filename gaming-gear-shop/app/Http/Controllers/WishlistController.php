@@ -27,9 +27,9 @@ class WishlistController extends Controller
    
     public function add(Request $request, Product $product): RedirectResponse
     {
-        $user = Auth::user(); // Lấy user đã đăng nhập (middleware đảm bảo có)
+        $user = Auth::user(); 
 
-        // Log để theo dõi
+        
         Log::info("Wishlist Add Attempt: User={$user->id}, Product={$product->id}");
 
         if (!$product || !$product->status) {
@@ -38,13 +38,11 @@ class WishlistController extends Controller
         }
 
         try {
-            // Dùng attach() để thêm, nó tự xử lý trùng lặp
             $user->wishlistedProducts()->attach($product->id);
             Log::info("Wishlist Add Success: User={$user->id}, Product={$product->id}");
             return redirect()->back()->with('success', 'Đã thêm "' . $product->name . '" vào yêu thích!');
 
         } catch (\Exception $e) {
-            // Ghi log lỗi nếu attach thất bại
             Log::error("Wishlist Add Exception: User={$user->id}, Product={$product->id}. Error: " . $e->getMessage());
             return redirect()->back()->with('error', 'Lỗi khi thêm vào yêu thích.');
         }
