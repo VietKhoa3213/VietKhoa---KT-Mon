@@ -124,7 +124,7 @@
 
             
 
-            <form action="{{ route('cart.add', $product) }}" method="POST" class="add-to-cart-form mb-4"> {{-- Sửa action --}}
+            <form action="{{ route('cart.add', $product) }}" method="POST" class="add-to-cart-form mb-4">
                 @csrf 
                 <div class="row align-items-center">
                     <div class="col-auto">
@@ -309,7 +309,6 @@
                             <div class="mb-3">
                                 <label for="comment" class="form-label">Bình luận của bạn <span class="text-danger">*</span></label>
                                 <textarea name="comment" id="comment" rows="4" class="form-control" required placeholder="Viết bình luận của bạn ở đây...">{{ old('comment') }}</textarea>
-                                {{--  @error('comment') <small class="text-danger d-block mt-1">{{ $message }}</small> @enderror  --}}
                             </div>
                             <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
                         </form>
