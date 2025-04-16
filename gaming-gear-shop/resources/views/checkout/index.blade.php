@@ -156,7 +156,6 @@
                             <strong>{{ number_format($finalTotal ?? 0, 0, ',', '.') }}₫</strong>
                         </li>
                     </ul>
-                    {{-- Có thể thêm ô nhập mã giảm giá ở đây --}}
                  </div>
             </div>
         </div>
