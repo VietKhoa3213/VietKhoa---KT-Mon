@@ -48,7 +48,7 @@ class CartController extends Controller
                 "id" => $product->id,
                 "name" => $product->name, 
                 "quantity" => $quantity,
-                "price" => ($product->discount_price > 0 && $product->discount_price < $product->price) ? $product->discount_price : $product->price, // Hoặc $product->giá
+                "price" => ($product->discount_price > 0 && $product->discount_price < $product->price) ? $product->discount_price : $product->price, 
                 "image" => $product->image 
             ];
         }
@@ -72,7 +72,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function update (Request $request, $productId): JsonResponse|RedirectResponse // <<< Trả về cả hai kiểu
+    public function update (Request $request, $productId): JsonResponse|RedirectResponse 
     {
         $validator = Validator::make($request->all(), [
             'quantity' => 'required|integer|min:1'
@@ -148,7 +148,6 @@ class CartController extends Controller
              } else {
                  return redirect()->route('cart.index')->with('success', 'Đã xóa sản phẩm khỏi giỏ hàng!');
              }
-             // --------------------
         } else {
              $errMsg = 'Sản phẩm không có trong giỏ hàng.';
              if ($request->expectsJson()) { }
