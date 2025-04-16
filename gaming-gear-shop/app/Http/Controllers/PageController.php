@@ -3,8 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Models\Contact; // Import Contact model
-use App\Http\Requests\StoreContactRequest; // Import Form Request (tạo ở bước sau)
+use App\Models\Contact;
+use App\Http\Requests\StoreContactRequest; 
 use Illuminate\Http\RedirectResponse;
 
 class PageController extends Controller
