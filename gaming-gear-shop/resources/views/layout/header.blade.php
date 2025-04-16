@@ -1,4 +1,3 @@
- <!-- Thanh thông tin phía trên -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-content">
