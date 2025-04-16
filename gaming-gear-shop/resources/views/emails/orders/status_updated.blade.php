@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cập nhật Trạng thái Đơn hàng #{{ $order->code }}</title>
     <style>
-        /* Base Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -234,7 +233,6 @@
                 @endif
             </div>
             
-            {{--  <a href="{{ route('orders.track', $order->id) }}" class="button">Theo dõi đơn hàng</a>  --}}
             
             <p style="margin-top: 30px;">Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email hỗ trợ hoặc hotline.</p>
             
