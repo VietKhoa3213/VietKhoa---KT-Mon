@@ -329,7 +329,6 @@
             @foreach($relatedProducts as $relatedProduct)
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <!-- Ảnh sản phẩm -->
                         <div class="product-image-container" style="height: 200px; overflow: hidden;">
                             @php
                                 $productImage = !empty($relatedProduct->image) 
@@ -345,7 +344,6 @@
                         </div>
 
                         <div class="card-body">
-                            <!-- Tên sản phẩm -->
                             <h5 class="card-title" style="font-size: 1rem;">
                                 <a href="{{ route('products.show', $relatedProduct) }}" 
                                    class="text-decoration-none text-dark">
@@ -353,7 +351,6 @@
                                 </a>
                             </h5>
 
-                            <!-- Giá sản phẩm -->
                             <div class="product-price">
                                 @if($relatedProduct->discount_price > 0 && $relatedProduct->discount_price < $relatedProduct->price)
                                     <span class="text-danger font-weight-bold">
@@ -410,33 +407,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainImage = document.getElementById('mainProductImage');
     const thumbnails = document.querySelectorAll('.product-gallery-thumbnails img');
 
-    // Đảm bảo các phần tử tồn tại trước khi thêm event listener
     if (mainImage && thumbnails.length > 0) {
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', function() {
-                // Lấy URL ảnh lớn từ data attribute của thumbnail được click
                 const newMainSrc = this.dataset.mainSrc;
                 if (newMainSrc) {
-                    mainImage.src = newMainSrc; // Đổi ảnh chính
+                    mainImage.src = newMainSrc; 
 
-                    // Bỏ class active ở tất cả thumb khác
                     document.querySelector('.product-gallery-thumbnails img.active-thumb')?.classList.remove('active-thumb');
-                    // Thêm class active cho thumb vừa click
                     this.classList.add('active-thumb');
                 }
             });
         });
     }
 
-    // Kích hoạt Tabs (Bootstrap 3 cần jQuery và bootstrap.js)
-    // Đảm bảo jQuery và bootstrap.js đã được load trong layout
+
     if (typeof $ !== 'undefined' && typeof $.fn.tab !== 'undefined') {
          $('#productTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-             // Có thể làm gì đó khi tab được chuyển
          })
     } else if (typeof bootstrap !== 'undefined') {
-        // Kích hoạt cho Bootstrap 5 (nếu bạn dùng BS5)
-         var triggerTabList = [].slice.call(document.querySelectorAll('#productTab a[data-toggle="tab"]')) // Hoặc data-bs-toggle
+         var triggerTabList = [].slice.call(document.querySelectorAll('#productTab a[data-toggle="tab"]')) 
          triggerTabList.forEach(function (triggerEl) {
              var tabTrigger = new bootstrap.Tab(triggerEl);
              triggerEl.addEventListener('click', function (event) {
