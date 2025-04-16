@@ -18,26 +18,20 @@ class BrandController extends Controller
 {
     private $uploadPath = 'preview/image/brand';
 
-    /**
-     * Hiển thị danh sách thương hiệu.
-     */
+   
     public function index(): View
     {
         $brands = Brand::latest('id')->paginate(10);
         return view('admin.brands.index', compact('brands'));
     }
 
-    /**
-     * Hiển thị form tạo thương hiệu mới.
-     */
+    
     public function create(): View
     {
         return view('admin.brands.create');
     }
 
-    /**
-     * Lưu thương hiệu mới.
-     */
+    
     public function store(StoreBrandRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -65,17 +59,13 @@ class BrandController extends Controller
         return redirect()->route('admin.brands.index')->with('success', 'Thêm thương hiệu thành công!');
     }
 
-    /**
-     * Hiển thị form chỉnh sửa thương hiệu.
-     */
+    
     public function edit(Brand $brand): View
     {
         return view('admin.brands.edit', compact('brand'));
     }
 
-    /**
-     * Cập nhật thương hiệu.
-     */
+   
     public function update(UpdateBrandRequest $request, Brand $brand): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -104,9 +94,7 @@ class BrandController extends Controller
         return redirect()->route('admin.brands.index')->with('success', 'Cập nhật thương hiệu thành công!');
     }
 
-    /**
-     * Xóa thương hiệu.
-     */
+    
     public function destroy(Brand $brand): RedirectResponse
     {
         try {
