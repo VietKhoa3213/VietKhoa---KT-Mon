@@ -9,14 +9,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 
 class OrderController extends Controller
 {
-    /**
-     * 
-     *
-     * @param Request $request 
-     * @param Order $order 
-     * @return View
-     * @throws AuthorizationException
-     */
+
     public function show(Request $request, Order $order): View
     {
 
