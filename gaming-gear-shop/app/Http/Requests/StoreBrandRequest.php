@@ -16,7 +16,7 @@ class StoreBrandRequest extends FormRequest
         return [
             'name' => 'required|string|max:100|unique:brands,name',
             'description' => 'nullable|string',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024', // Giảm max size logo còn 1MB
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024', 
         ];
     }
 
