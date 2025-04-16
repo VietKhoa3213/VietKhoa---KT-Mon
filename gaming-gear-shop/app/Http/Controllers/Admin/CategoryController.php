@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
-    /**
-     * Hàm index(): Hiển thị danh sách các loại sản phẩm.
-     */
+  
     public function index(): View
     {
         $categories = Category::latest()->paginate(10);
@@ -25,18 +23,13 @@ class CategoryController extends Controller
         return view('admin.categories.index', compact('categories'));
     }
 
-    /**
-     * Hàm create(): Hiển thị form để tạo mới loại sản phẩm.
-     */
+    
     public function create(): View
     {
-        // Chỉ đơn giản là trả về view chứa form tạo mới
         return view('admin.categories.create');
     }
 
-    /**
-     * Hàm store(): Lưu loại sản phẩm mới được tạo từ form vào database.
-     */
+    
     public function store(StoreCategoryRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -72,17 +65,12 @@ class CategoryController extends Controller
          return view('admin.categories.show', compact('category'));
     }
 
-    /**
-     * Hàm edit(): Hiển thị form để chỉnh sửa loại sản phẩm đã có.
-     */
     public function edit(Category $category): View 
     {
         return view('admin.categories.edit', compact('category'));
     }
 
-    /**
-     * Hàm update(): Cập nhật thông tin loại sản phẩm trong database.
-     */
+   
     public function update(UpdateCategoryRequest $request, Category $category): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -116,9 +104,7 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('success', 'Cập nhật loại sản phẩm thành công!');
     }
 
-    /**
-     * Hàm destroy(): Xóa loại sản phẩm khỏi database.
-     */
+    
     public function destroy(Category $category): RedirectResponse
     {
         if ($category->image) {
