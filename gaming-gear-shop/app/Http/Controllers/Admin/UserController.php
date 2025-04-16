@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User; // Dùng Model User chuẩn
+use App\Models\User; 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash; // Import Hash
-use Illuminate\Support\Facades\Auth; // Import Auth để kiểm tra user hiện tại
+use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Auth; 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
@@ -35,9 +35,7 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    /**
-     * Lưu user mới.
-     */
+    
     public function store(StoreUserRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -56,9 +54,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    /**
-     * Cập nhật user.
-     */
+    
     public function update(UpdateUserRequest $request, User $user): RedirectResponse
     {
 
@@ -109,9 +105,7 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'Cập nhật người dùng thành công!');
     }
 
-    /**
-     * Xóa user.
-     */
+   
     public function destroy(User $user): RedirectResponse
 {
     if ($user->id === Auth::id()) {
