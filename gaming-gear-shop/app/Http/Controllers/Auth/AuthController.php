@@ -15,9 +15,7 @@ use Illuminate\Auth\Events\PasswordReset;
 
 class AuthController extends Controller
 {
-    /**
-     * Hiển thị form đăng ký.
-     */
+  
     public function create(): View
     {
         return view('auth.register'); 
@@ -67,9 +65,7 @@ class AuthController extends Controller
       
     }
 
-    /**
-     * Hiển thị form đăng nhập.
-     */
+
     public function login(): View
     {
          return view('auth.login'); 
@@ -99,9 +95,7 @@ class AuthController extends Controller
         }
     }
 
-    /**
-     * Xử lý đăng xuất.
-     */
+   
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
