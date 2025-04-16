@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Slide; // Import model Slide
+use App\Models\Slide; 
 use App\Http\Requests\StoreSlideRequest;
 use App\Http\Requests\UpdateSlideRequest;
 use Illuminate\Http\Request;
@@ -34,9 +34,7 @@ class SlideController extends Controller
         return view('admin.slides.create');
     }
 
-    /**
-     * Lưu slide mới.
-     */
+   
     public function store(StoreSlideRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -62,7 +60,6 @@ class SlideController extends Controller
                      Log::info('Store Slide: Directory already exists: ' . $destinationPath); 
                 }
     
-                // Di chuyển file
                  Log::info('Store Slide: Moving file to: ' . $destinationPath . '/' . $imageName);
                 $imageFile->move($destinationPath, $imageName);
                  Log::info('Store Slide: File moved successfully.'); 
@@ -93,9 +90,6 @@ class SlideController extends Controller
         return view('admin.slides.edit', compact('slide'));
     }
 
-    /**
-     * Cập nhật slide.
-     */
     public function update(UpdateSlideRequest $request, Slide $slide): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -127,9 +121,7 @@ class SlideController extends Controller
         return redirect()->route('admin.slides.index')->with('success', 'Cập nhật slide thành công!');
     }
 
-    /**
-     * Xóa slide.
-     */
+  
     public function destroy(Slide $slide): RedirectResponse
     {
          try {
