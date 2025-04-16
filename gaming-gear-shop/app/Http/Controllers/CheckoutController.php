@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PlaceOrderRequest; // Import Form Request
+use App\Http\Requests\PlaceOrderRequest; 
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
