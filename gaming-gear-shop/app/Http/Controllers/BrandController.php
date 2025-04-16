@@ -9,13 +9,7 @@ use Illuminate\View\View;
 
 class BrandController extends Controller
 {
-    /**
-     * 
-     * 
-     *
-     * @param Brand $brand 
-     * @return View
-     */
+
     public function show(Brand $brand): View
     {
         $productsQuery = Product::where('brand_id', $brand->id) 
