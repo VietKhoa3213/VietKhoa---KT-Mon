@@ -65,38 +65,5 @@ class Product extends Model
         return $this->hasMany(Review::class);
     }
 
-//     public function getSpecificationsAttribute($value)
-//     {
-//     if (empty($value)) {
-//         return [];
-//     }
-    
-//     if (is_string($value)) {
-//         return json_decode($value, true) ?? [];
-//     }
-    
-//     return $value;
-//     }
 
-//     public function setSpecificationsAttribute($value)
-//     {
-//         if (is_array($value)) {
-//             $this->attributes['specifications'] = json_encode($value);
-//         } else {
-//             $this->attributes['specifications'] = null;
-//         }
-//     }
-
-//     public function getGalleryAttribute($value)
-// {
-//     if (empty($value)) {
-//         return [];
-//     }
-    
-//     if (is_string($value)) {
-//         return json_decode($value, true) ?? [];
-//     }
-    
-//     return $value;
-// }
 }
