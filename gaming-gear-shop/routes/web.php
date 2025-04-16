@@ -94,7 +94,7 @@ Route::prefix('admin')
     Route::delete('/remove/{product}', [WishlistController::class, 'remove'])->name('remove'); 
     });
 
-    Route::get('/search', [SearchController::class, 'index'])->name('search'); // <<< Đảm bảo route này tồn tại
+    Route::get('/search', [SearchController::class, 'index'])->name('search'); 
 
     Route::get('/contact', [PageController::class, 'showContactForm'])->name('contact.create');
     Route::post('/contact', [PageController::class, 'storeContactForm'])->name('contact.store');
@@ -102,7 +102,6 @@ Route::prefix('admin')
 
     Route::prefix('contacts')->name('contacts.')->group(function() {
         Route::get('/', [ContactController::class, 'index'])->name('index'); 
-            // Route::get('/{contact}', [ContactController::class, 'show'])->name('show'); // Trang xem chi tiết (nếu cần)
         Route::get('/{contact}/reply', [ContactController::class, 'replyForm'])->name('reply'); 
         Route::post('/{contact}/reply', [ContactController::class, 'sendReply'])->name('sendReply'); 
          Route::delete('/{contact}', [ContactController::class, 'destroy'])->name('destroy'); 
