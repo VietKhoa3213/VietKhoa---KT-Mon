@@ -15,8 +15,7 @@
                 <a class="nav-link {{ $currentStatus == $statusCode ? 'active' : '' }}"
                    href="{{ route('admin.orders.index', ['status' => $statusCode]) }}">
                     {{ $statusText }}
-                    {{-- Có thể thêm số lượng đơn hàng cho mỗi trạng thái --}}
-                    {{-- ( \App\Models\Order::where('shipping_status', $statusCode)->count() ) --}}
+         
                 </a>
             </li>
         @endforeach
