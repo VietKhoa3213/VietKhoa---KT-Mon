@@ -12,11 +12,7 @@ class StoreCategoryRequest extends FormRequest
         return true; 
     }
 
-    /**
-     * Lấy các quy tắc validation áp dụng cho request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
+  
     public function rules(): array
     {
         return [
