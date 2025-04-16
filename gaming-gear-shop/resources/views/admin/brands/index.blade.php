@@ -8,7 +8,6 @@
         <a href="{{ route('admin.brands.create') }}" class="btn btn-primary">Thêm Thương Hiệu Mới</a>
     </div>
 
-    {{-- Hiển thị thông báo --}}
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
@@ -35,9 +34,7 @@
                             <tr>
                                 <td>{{ $brand->id }}</td>
                                 <td>
-                                    {{--  @if($brand->logo)
-                                        <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" height="50" class="img-thumbnail-admin">
-                                    @endif  --}}
+                                 
 
                                     @if($brand->logo)
                                         
