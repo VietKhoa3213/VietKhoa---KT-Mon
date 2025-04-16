@@ -9,7 +9,7 @@ class StoreUserRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return true; // Middleware admin đã check
+        return true; 
     }
 
     public function rules(): array
