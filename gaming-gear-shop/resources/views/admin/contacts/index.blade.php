@@ -53,11 +53,9 @@
                                      @endif
                                 </td>
                                 <td>
-                                    {{-- Link tới trang trả lời --}}
                                     <a href="{{ route('contacts.reply', $contact) }}" class="btn btn-primary btn-sm" title="Xem và Phản hồi">
                                         <i class="fa fa-reply"></i> Phản hồi
                                     </a>
-                                     {{-- Nút xóa --}}
                                      <form action="{{ route('contacts.destroy', $contact) }}" method="POST" class="d-inline-block ml-1" onsubmit="return confirm('Bạn chắc chắn muốn xóa liên hệ này?');">
                                         @csrf
                                         @method('DELETE')
