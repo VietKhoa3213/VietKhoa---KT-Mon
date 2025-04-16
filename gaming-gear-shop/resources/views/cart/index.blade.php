@@ -1,4 +1,4 @@
-@extends('layout.master') {{-- Kế thừa layout chính --}}
+@extends('layout.master') 
 
 @section('title', 'Giỏ hàng của bạn')
 
