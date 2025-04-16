@@ -33,9 +33,7 @@ class NewsController extends Controller
         return view('admin.news.create');
     }
 
-    /**
-     * Lưu tin tức mới.
-     */
+  
     public function store(StoreNewsRequest $request): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -70,9 +68,7 @@ class NewsController extends Controller
         return view('admin.news.edit', compact('news'));
     }
 
-    /**
-     * Cập nhật tin tức.
-     */
+   
     public function update(UpdateNewsRequest $request, News $news): RedirectResponse
     {
         $validatedData = $request->validated();
@@ -104,9 +100,7 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')->with('success', 'Cập nhật tin tức thành công!');
     }
 
-    /**
-     * Xóa tin tức.
-     */
+   
     public function destroy(News $news): RedirectResponse
     {
         try {
