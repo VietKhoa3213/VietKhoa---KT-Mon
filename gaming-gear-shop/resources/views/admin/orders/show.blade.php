@@ -13,7 +13,6 @@
 
 
     <div class="row">
-        {{-- Cột trái: Thông tin đơn hàng & khách hàng --}}
         <div class="col-lg-7 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">Thông tin Khách Hàng & Giao Hàng</h6></div>
@@ -46,7 +45,6 @@
 
         </div>
 
-        {{-- Cột phải: Chi tiết sản phẩm trong đơn hàng --}}
         <div class="col-lg-5 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">Chi tiết Sản phẩm</h6></div>
