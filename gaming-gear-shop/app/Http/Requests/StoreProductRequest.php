@@ -60,7 +60,7 @@ class StoreProductRequest extends FormRequest
              'is_new.boolean' => 'Trường "Sản phẩm mới" không hợp lệ.',
              'is_featured.boolean' => 'Trường "Sản phẩm nổi bật" không hợp lệ.',
              'status.boolean' => 'Trường "Trạng thái" không hợp lệ.',
-             'specifications.json' => 'Thông số kỹ thuật phải là định dạng JSON hợp lệ.', // Thêm message cho rule 'json'
+             'specifications.json' => 'Thông số kỹ thuật phải là định dạng JSON hợp lệ.', 
 
         ];
     }
