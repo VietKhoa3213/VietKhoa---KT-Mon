@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth; // Import Auth để kiểm tra guest/user
-use Illuminate\Validation\Rule;     // Import Rule
+use Illuminate\Support\Facades\Auth; 
+use Illuminate\Validation\Rule;     
 
 class PlaceOrderRequest extends FormRequest
 {
